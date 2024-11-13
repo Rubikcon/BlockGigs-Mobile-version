@@ -2,9 +2,88 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {
-    height: 100%;
-    margin: 0; 
-    overflow-x: hidden;
-   
+html,
+body {
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tailwind Utility Classes */
+.container {
+  padding: 1.5rem;
+  background-color: #fff;
+  min-height: 100vh;
+}
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.card-header {
+  color: #fff;
+  font-size: 1.25rem;
+}
+
+.card-body {
+  color: #bdc3c7;
+}
+
+/* For metmask button */
+
+/* Tailwind Button Styling */
+.connectButton {
+  background-color: #00bfff;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.connectButton:disabled {
+  background-color: #aaaaaa;
+  cursor: not-allowed;
+}
+
+.disconnectButton {
+  background-color: #ff5c5c;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* style for the dashboard - top section */
+.work {
+  background: linear-gradient(90deg, #65c66f 83.66%, #46864d 116.34%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: Onest;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  color: #1f1e1e;
+  font-family: Onest;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px; /* 120% */
 }
