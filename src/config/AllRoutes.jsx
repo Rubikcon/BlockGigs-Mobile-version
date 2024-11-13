@@ -23,6 +23,7 @@ const MyGigs = lazy(() => import('../pages/MyGigs'));
 const Discover = lazy(() => import('../pages/Discover'));
 const Logout = lazy(() => import('../pages/Logout'));
 const MetaMaskConnector = lazy(() => import('../components/MetaMask/MetaMaskConnector'));
+const NotFound = lazy(() => import('../pages/404'));
 
 // Define router with separate layouts
 const router = createBrowserRouter(createRoutesFromElements(
@@ -49,6 +50,8 @@ const router = createBrowserRouter(createRoutesFromElements(
             <Route path="connect-metamask" element={<MetaMaskConnector />} />
             <Route path="logout" element={<Logout />} />
         </Route>
+        {/* 404 Not Found Route */}
+        <Route path="*" element={<NotFound />} />
     </Route>
 ));
 
