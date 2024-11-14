@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CiMenuFries } from "react-icons/ci";
 import { LiaTimesSolid } from "react-icons/lia";
 import { connectWallet } from "../../utils/WalletUtils"
-
+import "./style.css"
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -23,6 +23,11 @@ const Navbar = () => {
     }
   };
 
+  const handleDisconnectWallet = () => {
+    setAccount(null);
+    console.log("Disconnect Wallet successfully");
+  }
+
 
   return (
     <nav className="sticky top-0 flex justify-between items-center w-full px-6 md:px-[160px] py-4 md:py-[30px] bg-gradient-to-r from-[#ecf3ff] via-[#ffffff] to-[#ecf3ff]">
@@ -35,7 +40,14 @@ const Navbar = () => {
         <li><a className='text-[#2f66f6] font-extrabold text-base' href="/home">Home</a></li>
         <li><a className='text-[#696f8c] font-medium text-base' href="/dashboard">Dashboard</a></li>
         <li><a className='text-[#696f8c] font-medium text-base' href="#talents">Browse Talents</a></li>
-        <button onClick={handleConnectWallet} className='px-4 py-2 bg-[#2F66F6] text-white font-medium rounded'>Connect Wallet</button>
+        {/* <button
+
+          onClick={!account ? handleConnectWallet : null} className='px-4 py-2 bg-[#2F66F6] text-white font-medium rounded'>{account ? `Connected: ${account}` : 'Connect Wallet'}</button> */}
+        {!account ? (<button className='px-4 py-2 bg-[#2F66F6] text-white font-medium rounded' onClick={handleConnectWallet}>Connect Wallet</button>) : (<div className='wallet-info'><span className='wallet-address'>Connected: {account.slice(0, 6) + '...' + account.slice(-4)}</span>
+          <button onClick={handleDisconnectWallet} className='disconnect-button'>
+            Disconnect
+          </button>
+        </div>)}
       </ul>
 
 
@@ -50,8 +62,12 @@ const Navbar = () => {
           <li><a href="/home" className='text-[#2f66f6] font-extrabold text-lg' onClick={toggleNav}>Home</a></li>
           <li><a href="/dashboard" className='text-[#696f8c] font-medium text-lg' onClick={toggleNav}>Dashboard</a></li>
           <li><a href="#talents" className='text-[#696f8c] font-medium text-lg' onClick={toggleNav}>Browse Talents</a></li>
-          <button onClick={handleConnectWallet} className='px-4 py-2 bg-[#2F66F6] text-white font-medium rounded'>Connect Wallet</button>
-
+          {/* <button onClick={handleConnectWallet} className='px-4 py-2 bg-[#2F66F6] text-white font-medium rounded'>Connect Wallet</button> */}
+          {!account ? (<button className='px-4 py-2 bg-[#2F66F6] text-white font-medium rounded' onClick={handleConnectWallet}>Connect Wallet</button>) : (<div className='wallet-info'><span className='wallet-address'>Connected: {account.slice(0, 6) + '...' + account.slice(-4)}</span>
+            <button onClick={handleDisconnectWallet} className='disconnect-button'>
+              Disconnect
+            </button>
+          </div>)}
         </ul>
       )}
     </nav>

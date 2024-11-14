@@ -7,6 +7,8 @@ import Activity from '../components/Dashboard/Activity';
 import AccountSection from '../components/Dashboard/AccountSection';
 import Offers from '../components/Dashboard/Offers';
 
+
+
 const Dashboard = () => {
   return (
     <div className="bg-[#FFF] min-h-screen p-4 md:p-6 rounded-md">

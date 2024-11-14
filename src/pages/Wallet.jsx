@@ -1,6 +1,7 @@
 // pages/Wallet.js
 import React from "react";
 // const eth = "../config/detect"
+import "../components/LandingPage/style.css"
 import MetaMaskConnector from "../components/MetaMask/MetaMaskConnector"
 
 import { Link } from 'react-router-dom';
