@@ -37,7 +37,7 @@ const Navbar = () => {
 
       {/* Desktop Menu */}
       <ul className="hidden md:flex justify-between items-center gap-9">
-        <li><a className='text-[#2f66f6] font-extrabold text-base' href="/home">Home</a></li>
+        <li><a className='text-[#2f66f6] font-extrabold text-base' href="/">Home</a></li>
         <li><a className='text-[#696f8c] font-medium text-base' href="/dashboard">Dashboard</a></li>
         <li><a className='text-[#696f8c] font-medium text-base' href="#talents">Browse Talents</a></li>
         {/* <button
@@ -59,7 +59,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {open && (
         <ul className="fixed top-14 left-0 w-full h-screen flex flex-col items-center justify-center gap-8 bg-gradient-to-r from-[#ecf3ff] via-[#ffffff] to-[#ecf3ff] z-40">
-          <li><a href="/home" className='text-[#2f66f6] font-extrabold text-lg' onClick={toggleNav}>Home</a></li>
+          <li><a href="/" className='text-[#2f66f6] font-extrabold text-lg' onClick={toggleNav}>Home</a></li>
           <li><a href="/dashboard" className='text-[#696f8c] font-medium text-lg' onClick={toggleNav}>Dashboard</a></li>
           <li><a href="#talents" className='text-[#696f8c] font-medium text-lg' onClick={toggleNav}>Browse Talents</a></li>
           {/* <button onClick={handleConnectWallet} className='px-4 py-2 bg-[#2F66F6] text-white font-medium rounded'>Connect Wallet</button> */}

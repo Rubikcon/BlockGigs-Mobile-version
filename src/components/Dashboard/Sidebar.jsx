@@ -1,7 +1,7 @@
 // Sidebar.js
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { BiHome } from "react-icons/bi";
+import { CiHome } from "react-icons/ci";
 import logo from "../../assets/logo1.svg";
 import { FaCog } from "react-icons/fa";
 import { IoCubeSharp } from "react-icons/io5";
@@ -39,7 +39,7 @@ const Sidebar = () => {
                             to="/"
                             className={`flex items-center p-2 ${isActive("/home") ? "bg-white text-black rounded-lg" : "text-gray-300"} hover:text-white`}
                         >
-                            < BiHome className="mr-3" />
+                            < CiHome className="mr-3" />
                             {isOpen && <span>Home</span>}
                         </Link>
                     </li>
