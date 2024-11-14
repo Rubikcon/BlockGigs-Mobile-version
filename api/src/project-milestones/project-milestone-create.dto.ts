@@ -1,5 +1,4 @@
 import { IsInt, IsNotEmpty, IsPositive, IsString } from "class-validator";
-import { Transform } from "class-transformer";
 
 export class ProjectMilestoneCreateDTO {
   @IsString()
