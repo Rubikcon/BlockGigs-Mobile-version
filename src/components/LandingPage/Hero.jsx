@@ -4,8 +4,23 @@ import Ellips438 from '../../assets/Ellipse 438.png';
 import Stars from '../../assets/stars.png';
 import Ellipse441 from '../../assets/Ellipse 441.png';
 import Ellipse440 from '../../assets/Ellipse 440.png';
+import {connectWallet} from "../../utils/WalletUtils"
+import { useState } from 'react';
 
 const Hero = () => {
+    const [account, setAccount] = useState(null);
+
+    const handleConnectWallet = async () => {
+        try {
+          const userAccount = await connectWallet();
+          setAccount(userAccount);
+          console.log("Connected Account ", userAccount)
+    
+        } catch (err) {
+          console.error("Error connecting wallet", err.message)
+        }
+      };
+
   return (
     <section className='w-full h-[600px] bg-gradient-to-r from-[#ecf3ff] via-[#ffffff] to-[#ecf3ff] flex flex-col lg:flex-row lg:justify-between items-center'>
         {/* First div */}
@@ -42,8 +57,8 @@ const Hero = () => {
             </p>
 
             <div className='flex justify-between items-center gap-6'>
-                <button className='flex w-[193px] h-[48px] px-6 py-3 justify-center items-center gap-2 rounded bg-[#2F66F6] font-montserrat text-base text-white not-italic font-medium leading-6'>Sign up as Talent</button>
-                <button className='flex px-6 py-3 justify-center items-center gap-2 rounded border border-[#D7D9E4] bg-[#696F8C] font-montserrat text-base text-white not-italic font-medium leading-6'>Hire Talent</button>
+                <button onClick={handleConnectWallet} className='flex w-[193px] h-[48px] px-6 py-3 justify-center items-center gap-2 rounded bg-[#2F66F6] font-montserrat text-base text-white not-italic font-medium leading-6'>Sign up as Talent</button>
+                <button onClick={handleConnectWallet} className='flex px-6 py-3 justify-center items-center gap-2 rounded border border-[#D7D9E4] bg-[#696F8C] font-montserrat text-base text-white not-italic font-medium leading-6'>Hire Talent</button>
             </div>
         </div>
 

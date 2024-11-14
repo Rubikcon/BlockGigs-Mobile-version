@@ -9,7 +9,6 @@ const Wallet = lazy(() => import('../pages/Wallet'));
 const Messages = lazy(() => import('../pages/Messages'));
 const Offers = lazy(() => import('../pages/Offers'));
 const Settings = lazy(() => import('../pages/Settings'));
-const Logout = lazy(() => import('../pages/Logout'));
 
 const ProfilePage = () => {
   return (
@@ -45,7 +44,6 @@ const ProfilePage = () => {
             <Tab className="p-2 text-teal-500 cursor-pointer">Messages</Tab>
             <Tab className="p-2 text-teal-500 cursor-pointer">Offers</Tab>
             <Tab className="p-2 text-teal-500 cursor-pointer">Settings</Tab>
-            <Tab className="p-2 text-teal-500 cursor-pointer">Logout</Tab>
           </TabList>
 
           <TabPanel>
@@ -65,9 +63,6 @@ const ProfilePage = () => {
           </TabPanel>
           <TabPanel>
             <Settings />
-          </TabPanel>
-          <TabPanel>
-            <Logout />
           </TabPanel>
         </Tabs>
       </div>

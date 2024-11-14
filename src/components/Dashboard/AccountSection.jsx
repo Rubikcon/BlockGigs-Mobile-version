@@ -41,18 +41,20 @@ const AccountSection = () => {
                 {/* Dropdown for edit/logout options */}
                 {isDropdownOpen && (
                     <div className="absolute bg-white dark:bg-gray-700 rounded-md shadow-lg mt-2 right-0 w-40">
-                        <button
-                            onClick={handleEdit}
+                        <a href="dashboard/profile">
+                            <button
+                                className="block w-full text-left text-gray-800 dark:text-gray-100 px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600"
+                            >
+                                Profile
+                            </button>
+                        </a>
+                        <a href="/dashboard/logout">                        <button
                             className="block w-full text-left text-gray-800 dark:text-gray-100 px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600"
                         >
-                            Edit Profile
+                            <a href="/dashboard/logout">Logout</a>
+
                         </button>
-                        <button
-                            onClick={handleLogout}
-                            className="block w-full text-left text-gray-800 dark:text-gray-100 px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600"
-                        >
-                            Logout
-                        </button>
+                        </a>
                     </div>
                 )}
             </div>

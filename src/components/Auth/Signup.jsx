@@ -77,29 +77,29 @@ const SignUp = () => {
       } else {
         console.error('Failed to connect wallet', err);
         setError('Failed to connect wallet.');
-}
+      }
     } finally {
       setConnecting(false); // Reset the loading state once finished
     }
   };
 
   // Handle email/password sign up
-  const handleEmailSignUp = (e) => {
-    e.preventDefault();
-    // Validate email and password (simple validation here)
-    if (!email.includes('@')) {
-      setEmailError('Please enter a valid email.');
-      return;
-    }
-    if (password.length < 6) {
-      setPasswordError('Password must be at least 6 characters.');
-      return;
-    }
-    // Here, you'd handle the actual sign-up process (e.g., sending data to an API)
-    console.log('Signing up with email:', email);
-    setEmailError('');
-    setPasswordError('');
-  };
+  // const handleEmailSignUp = (e) => {
+  //   e.preventDefault();
+  //   // Validate email and password (simple validation here)
+  //   if (!email.includes('@')) {
+  //     setEmailError('Please enter a valid email.');
+  //     return;
+  //   }
+  //   if (password.length < 6) {
+  //     setPasswordError('Password must be at least 6 characters.');
+  //     return;
+  //   }
+  //   // Here, you'd handle the actual sign-up process (e.g., sending data to an API)
+  //   console.log('Signing up with email:', email);
+  //   setEmailError('');
+  //   setPasswordError('');
+  // };
 
   // If loading, show loading message
   if (loading) {
@@ -142,39 +142,6 @@ const SignUp = () => {
       ) : (
         <p className="text-center text-red-500 mb-4">Please install MetaMask to connect your wallet.</p>
       )}
-
-      {/* Email/Password Registration */}
-      <form onSubmit={handleEmailSignUp} className="space-y-4">
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-          <input
-            type="email"
-            id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-md"
-            required
-          />
-          {emailError && <p className="text-red-500 text-xs mt-2">{emailError}</p>}
-        </div>
-
-        <div>
-          <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-md"
-            required
-          />
-          {passwordError && <p className="text-red-500 text-xs mt-2">{passwordError}</p>}
-        </div>
-
-        <button type="submit" className="w-full p-3 bg-teal-500 text-white rounded">
-          Sign Up with Email
-        </button>
-      </form>
     </div>
   );
 };

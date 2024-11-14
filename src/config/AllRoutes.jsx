@@ -22,6 +22,7 @@ const Dashboard = lazy(() => import('../pages/Dashboard'));
 const MyGigs = lazy(() => import('../pages/MyGigs'));
 const Discover = lazy(() => import('../pages/Discover'));
 const Logout = lazy(() => import('../pages/Logout'));
+const Signup = lazy(() => import('../utils/WalletUtils'));
 const MetaMaskConnector = lazy(() => import('../components/MetaMask/MetaMaskConnector'));
 const NotFound = lazy(() => import('../pages/404'));
 
@@ -48,8 +49,14 @@ const router = createBrowserRouter(createRoutesFromElements(
             <Route path="profile" element={<Profile />} />
             <Route path="settings" element={<Settings />} />
             <Route path="connect-metamask" element={<MetaMaskConnector />} />
-            <Route path="logout" element={<Logout />} />
+
         </Route>
+
+        {/* Logout Route */}
+        <Route path="/dashboard/logout" element={<Logout />} />
+
+        {/* Signup with metamask */}
+        <Route path="/signup" element={<Signup />} />
         {/* 404 Not Found Route */}
         <Route path="*" element={<NotFound />} />
     </Route>
