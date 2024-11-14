@@ -6,9 +6,10 @@ import { UserController } from './users/users.controller';
 import { UserService } from './users/users.service';
 import { ClientsModule } from './clients/clients.module';
 import { ProjectsModule } from './projects/projects.module';
+import { ProjectMilestonesModule } from './project-milestones/project-milestones.module';
 
 @Module({
-  imports: [UsersModule, ClientsModule, ProjectsModule],
+  imports: [UsersModule, ClientsModule, ProjectsModule, ProjectMilestonesModule],
   controllers: [AppController, UserController],
   providers: [AppService, UserService],
 })
