@@ -4,7 +4,6 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { Project } from "./project.entity";
 import { UserService } from "src/users/users.service";
-import { NotFoundError } from "rxjs";
 
 @Injectable()
 export class ProjectsService {

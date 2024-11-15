@@ -4,17 +4,47 @@
 
 Server for Block Gigs Application
 
-## Project setup
+## Prerequisites
 
-```bash
-$ pnpm install
+1. Node.js - Make sure you have Node.js installed (v14 or higher recommended).
+2. MySQL - Install and run MySQL locally or use a remote MySQL server.
+3. Nest CLI - Install the NestJS CLI globally if you haven’t already:
+
+```
+npm install -g @nestjs/cli
+```
+
+4 .env file - A .env file is required for setting database credentials and other environment variables.
+
+## Installation
+
+1. Install Dependencies
+
+```
+npm install
+```
+
+2. Set Up the .env File:
+
+In the project root, create a .env file with the following variables. Replace <your-values> with your actual credentials:
+
+```
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=<your-password>
+DB_NAME=<your-database-name>
 ```
 
 ## Set up the database
 
-### MySQL
+Create the database
 
-Must have mysql installed. Create a user and a database, and add these environment variables to your .env file.
+Ensure that the database specified in DB_NAME exists in your MySQL server. Start mysql server locally, and login with credentials. You can then create the database manually:
+
+```
+CREATE DATABASE <your-database-name>;
+```
 
 ## Compile and run the project
 
