@@ -1,18 +1,18 @@
-import { Controller, Get, Post, Body } from '@nestjs/common';
-import { ClientsService } from './clients.service';
-import { ClientDTO } from './client.dto';
+import { Controller, Get, Post, Body } from "@nestjs/common";
+import { ClientsService } from "./clients.service";
+import { ClientDTO } from "./client.dto";
 
-@Controller('clients')
+@Controller("clients")
 export class ClientsController {
   constructor(private readonly clientService: ClientsService) {}
 
   @Get()
-  getClients(): ClientDTO[] {
+  async getClients(): Promise<ClientDTO[]> {
     return this.clientService.getClients();
   }
 
   @Post()
-  createClient(@Body() clientDTO: ClientDTO): ClientDTO {
+  async createClient(@Body() clientDTO: ClientDTO): Promise<ClientDTO> {
     return this.clientService.createClient(clientDTO);
   }
 }

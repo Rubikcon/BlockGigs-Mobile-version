@@ -10,6 +10,9 @@ import { ProjectMilestonesModule } from "./project-milestones/project-milestones
 import { TypeOrmModule } from "@nestjs/typeorm";
 import { ConfigModule } from "@nestjs/config";
 import { User } from "./users/user.entity";
+import { Client } from "./clients/client.entity";
+import { Project } from "./projects/project.entity";
+import { ProjectMilestone } from "./project-milestones/project-milestone.entity";
 
 @Module({
   imports: [
@@ -25,7 +28,7 @@ import { User } from "./users/user.entity";
       username: process.env.DATABASE_USER,
       password: process.env.DATABASE_PASSWORD,
       database: process.env.DATABASE_NAME,
-      entities: [User],
+      entities: [User, Client, Project, ProjectMilestone],
       synchronize: true,
     }),
   ],

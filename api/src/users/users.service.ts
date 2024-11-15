@@ -11,20 +11,8 @@ export class UserService {
     private usersRepository: Repository<User>
   ) {}
 
-  users: UserDTO[] = [
-    {
-      username: "coder",
-      walletAddress: "0x12344",
-      email: "someone@gmail.com",
-      phone: "+44323",
-      location: "London",
-      skills: [],
-    },
-  ];
-
   async getUser(id: number): Promise<User> {
     const user = await this.usersRepository.findOneBy({ id });
-    console.log("Stuff", id, user);
     if (user) return user;
     else {
       throw new NotFoundException("No user");

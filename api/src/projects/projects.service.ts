@@ -1,29 +1,21 @@
-import { Injectable } from '@nestjs/common';
-import { ProjectDTO } from './project.dto';
+import { Injectable } from "@nestjs/common";
+import { ProjectDTO } from "./project.dto";
+import { InjectRepository } from "@nestjs/typeorm";
+import { Repository } from "typeorm";
+import { Project } from "./project.entity";
 
 @Injectable()
 export class ProjectsService {
-  projects: ProjectDTO[] = [
-    {
-      id: 1,
-      title: 'Marketplace for something',
-      description: 'A list of things',
-      requiredSkills: 'Must be a coder with Typescript',
-      budget: 2000,
-      deadline: 12345667,
-      clientId: 1,
-    },
-  ];
-  currProjectId: number = 2;
+  constructor(
+    @InjectRepository(Project)
+    private projectsRepository: Repository<Project>
+  ) {}
 
-  getProjects(): ProjectDTO[] {
-    return this.projects;
+  async getProjects(): Promise<ProjectDTO[]> {
+    return await this.projectsRepository.find();
   }
 
-  createProject(project: ProjectDTO): ProjectDTO {
-    const newProject = { ...project, id: this.currProjectId };
-    this.projects.push(newProject);
-    this.currProjectId++;
-    return newProject;
+  async createProject(project: ProjectDTO): Promise<ProjectDTO> {
+    return this.projectsRepository.save(project);
   }
 }

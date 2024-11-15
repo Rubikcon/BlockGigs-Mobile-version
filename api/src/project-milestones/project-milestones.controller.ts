@@ -10,17 +10,21 @@ export class ProjectMilestonesController {
   ) {}
 
   @Get(":projectId")
-  getMilestonesForProject(@Param() { projectId }: any): ProjectMilestoneDTO[] {
-    return this.projectMilestonesService.getProjectMilestones(projectId);
+  async getMilestonesForProject(
+    @Param() { projectId }: { projectId: number }
+  ): Promise<ProjectMilestoneDTO[]> {
+    return this.projectMilestonesService.getProjectMilestones(
+      projectId as number
+    );
   }
 
   @Post(":projectId")
-  createMilestone(
-    @Param() { projectId }: any,
+  async createMilestone(
+    @Param() { projectId }: { projectId: number },
     @Body() projectMilestoneCreateDTO: ProjectMilestoneCreateDTO
-  ): ProjectMilestoneDTO {
+  ): Promise<ProjectMilestoneDTO> {
     return this.projectMilestonesService.createMilestoneForProject(
-      projectId,
+      projectId as number,
       projectMilestoneCreateDTO
     );
   }
