@@ -1,9 +1,10 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable, NotFoundException } from "@nestjs/common";
 import { CreateProjectDTO } from "./project.dto";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
 import { Project } from "./project.entity";
 import { UserService } from "src/users/users.service";
+import { NotFoundError } from "rxjs";
 
 @Injectable()
 export class ProjectsService {
@@ -27,7 +28,7 @@ export class ProjectsService {
     const project = await this.projectsRepository.findOneBy({ id: projectId });
 
     if (project === null) {
-      throw new Error("Invalid projectId");
+      throw new NotFoundException("Invalid projectId");
     }
 
     return project;
