@@ -47,6 +47,7 @@ export class ProjectsService {
   async fetchProjectsByUser(userId: number) {
     const projects = await this.projectsRepository.find({
       where: { assignedUserId: userId },
+      relations: ["projectMilestones"],
     });
 
     return projects;

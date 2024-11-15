@@ -26,10 +26,10 @@ export class ProjectsController {
     this.projectsService.assign(projectId, userId);
   }
 
-  @Get(":projectId")
+  @Get("/user/:userId")
   async fetchProjectsByUser(
-    @Param("projectId") projectId: number
+    @Param("userId") userId: number
   ): Promise<Project[]> {
-    return this.projectsService.fetchProjectsByUser(projectId);
+    return this.projectsService.fetchProjectsByUser(userId);
   }
 }
