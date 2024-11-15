@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { ProjectMilestone } from "src/project-milestones/project-milestone.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Project {
@@ -22,4 +23,10 @@ export class Project {
 
   @Column({ nullable: false })
   clientId: number;
+
+  @Column({ nullable: true })
+  assignedUserId: number | null;
+
+  @OneToMany(() => ProjectMilestone, (milestone) => milestone.project)
+  projectMilestones: ProjectMilestone[];
 }

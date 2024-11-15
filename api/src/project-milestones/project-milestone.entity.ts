@@ -1,5 +1,6 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import { ProjectMilestoneStatus } from "./project-milestone.dto";
+import { Project } from "src/projects/project.entity";
 
 @Entity()
 export class ProjectMilestone {
@@ -21,8 +22,8 @@ export class ProjectMilestone {
   @Column({ nullable: false })
   deadline: number;
 
-  @Column({ nullable: false })
-  projectId: number;
+  @ManyToOne(() => Project, (project) => project.projectMilestones)
+  project: Project;
 
   @Column({ nullable: false })
   clientId: number;

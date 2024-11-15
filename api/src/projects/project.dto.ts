@@ -1,4 +1,4 @@
-export class ProjectDTO {
+export class CreateProjectDTO {
   id?: number;
   title: string;
   description: string;
