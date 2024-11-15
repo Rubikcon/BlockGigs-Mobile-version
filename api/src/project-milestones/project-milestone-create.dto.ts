@@ -18,7 +18,4 @@ export class ProjectMilestoneCreateDTO {
 
   @IsInt()
   deadline: number;
-
-  @IsNotEmpty()
-  clientId: number;
 }
