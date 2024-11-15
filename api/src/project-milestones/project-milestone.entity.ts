@@ -25,9 +25,6 @@ export class ProjectMilestone {
   @ManyToOne(() => Project, (project) => project.projectMilestones)
   project: Project;
 
-  @Column({ nullable: false })
-  clientId: number;
-
   @Column({ nullable: false, default: ProjectMilestoneStatus.NOT_STARTED })
   status: ProjectMilestoneStatus;
 }
