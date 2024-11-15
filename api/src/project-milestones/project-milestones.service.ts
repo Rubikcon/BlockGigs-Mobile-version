@@ -1,5 +1,8 @@
-import { Injectable } from "@nestjs/common";
-import { ProjectMilestoneDTO } from "./project-milestone.dto";
+import { Injectable, NotFoundException } from "@nestjs/common";
+import {
+  ProjectMilestoneDTO,
+  ProjectMilestoneStatus,
+} from "./project-milestone.dto";
 import { ProjectMilestoneCreateDTO } from "./project-milestone-create.dto";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
@@ -31,5 +34,30 @@ export class ProjectMilestonesService {
       ...milestone,
       project: project,
     });
+  }
+
+  async getMilestoneById(
+    projectMilestoneId: number
+  ): Promise<ProjectMilestone> {
+    const projectMilestone = await this.projectMilestonesRepository.findOneBy({
+      id: projectMilestoneId,
+    });
+
+    if (!projectMilestone) {
+      throw new NotFoundException("Milestone does not exist");
+    }
+
+    return projectMilestone;
+  }
+
+  async updateMilestoneStatus(
+    projectMilestoneId: number,
+    status: ProjectMilestoneStatus
+  ) {
+    const projectMilestone = await this.getMilestoneById(projectMilestoneId);
+
+    projectMilestone.status = status;
+
+    this.projectMilestonesRepository.save(projectMilestone);
   }
 }
