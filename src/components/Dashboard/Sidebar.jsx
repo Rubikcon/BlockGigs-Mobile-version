@@ -11,16 +11,26 @@ import { TbMessageFilled } from "react-icons/tb";
 import { IoWallet } from "react-icons/io5";
 import { PiChartDonutFill } from "react-icons/pi";
 import { TbLogout2 } from "react-icons/tb";
-const Sidebar = () => {
-    const [isOpen, setIsOpen] = useState(true);
+
+
+
+
+
+const Sidebar = ({isOpen, setIsOpen }) => {
+    // const [isOpen, setIsOpen] = useState(true);
     const location = useLocation();
+
 
     const isActive = (path) => location.pathname === path;
 
     return (
         <div className={`bg-[#1C2335] text-white h-screen ${isOpen ? "w-64" : "w-20"} transition-width duration-300 fixed top-0 left-0 flex flex-col`}>
             <div className="flex items-center justify-center p-4 border-b border-gray-700">
-                <img src={logo} alt="Logo" className="w-[500px] h-[80px]" />
+                <img src={logo} alt="Logo"
+
+                    // className="w-[500px] h-[80px]"
+                    className={`w-full ${isOpen ? "h-12" : "h-8"} transition-all`}
+                />
             </div>
 
             <div className="flex items-center justify-between p-4 border-b border-gray-700">

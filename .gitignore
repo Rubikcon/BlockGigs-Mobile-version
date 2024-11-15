@@ -13,6 +13,11 @@ dist-ssr
 *.local
 .env
 
+
+# Secrets 
+.env
+
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
