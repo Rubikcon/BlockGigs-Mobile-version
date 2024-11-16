@@ -12,14 +12,14 @@ import Footer from './Footer';
 const Landingpage = () => {
   return (
     <div>
-        <Navbar />
-        <Hero />
-        <Heroblue />
-        <Sectionone />
-        <Sectiontwo />
-        <Sectionthree />
-        <Sectionfour />
-        <Footer />
+      <Navbar />
+      <Hero />
+      <Heroblue />
+      <Sectionone />
+      <Sectiontwo />
+      <Sectionthree />
+      <Sectionfour />
+      <Footer />
     </div>
   )
 }
