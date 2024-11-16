@@ -148,7 +148,7 @@ Push your branch to your forked repository.
 git push origin feature/your-feature-name
 
 5. **Open a Pull Request**
- Once your branch is pushed, open a pull request to the main repository. Be sure to include a detailed description of what your changes do and why they’re important.
+Once your branch is pushed, open a pull request to the main repository. Be sure to include a detailed description of what your changes do and why they’re important.
 
 We look forward to reviewing your contributions! Thank you for helping us improve BlockGigs.
 
