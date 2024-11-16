@@ -41,10 +41,10 @@ Designed to meet the unique demands of the blockchain space, BlockGigs prioritiz
 
 ### Why BlockGigs?
 
-- ** Empowering African Talent **: We open doors for African blockchain professionals, connecting them to remote opportunities with leading global companies.
-- ** Built for a Decentralized Future **: BlockGigs leverages cutting-edge decentralized technology to deliver a secure, transparent, and efficient hiring experience.
-- ** Privacy-First Approach **: Our platform enables anonymous hiring, ensuring that candidates and companies can connect without compromising their privacy.
-- ** Secure and Seamless Payments **: BlockGigs guarantees effortless, secure transactions, ensuring professionals are paid promptly for their work.
+- **Empowering African Talent**: We open doors for African blockchain professionals, connecting them to remote opportunities with leading global companies.
+- **Built for a Decentralized Future**: BlockGigs leverages cutting-edge decentralized technology to deliver a secure, transparent, and efficient hiring experience.
+- **Privacy-First Approach**: Our platform enables anonymous hiring, ensuring that candidates and companies can connect without compromising their privacy.
+- **Secure and Seamless Payments**: BlockGigs guarantees effortless, secure transactions, ensuring professionals are paid promptly for their work.
 
 ---
 
