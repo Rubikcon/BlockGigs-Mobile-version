@@ -16,7 +16,7 @@ const SearchBar = () => {
       <input
         type="text"
         placeholder="Search for jobs, offers..."
-        className="w-full bg-transparent text-gray-700 placeholder-gray-500 focus:outline-none"
+        className="w-full bg-transparent text-sm sm:text-base md:text-lg text-gray-700 placeholder-gray-500 focus:outline-none"
         value={query}
         onChange={handleSearch}
       />

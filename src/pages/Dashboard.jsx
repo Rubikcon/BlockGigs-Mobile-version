@@ -15,18 +15,20 @@ const Dashboard = () => {
       <div className="flex flex-col gap-4 md:gap-6">
 
         {/* Top Section: Search Bar */}
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mt-6 mb-6'>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 mt-6 mb-6">
           <div>
-            <h2 className="text-lg md:text-2xl font-semibold">
-              Welcome Back, Let's <span className='work'>Work</span>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-semibold">
+              Welcome Back, Let's <span className="work">Work</span>
             </h2>
           </div>
 
-          <div className="flex justify-between items-center">
+          <div className="flex justify-between items-center p-4 sm:p-6">
             <SearchBar />
           </div>
+
           <AccountSection />
         </div>
+
 
         {/* Main Section: Ongoing Jobs and Revenue */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mt-6 mb-6">
@@ -34,6 +36,7 @@ const Dashboard = () => {
           <Offers />
           <RevenueDisplay />
         </div>
+
 
         {/* Bottom Section: Recommended and Activity */}
         <div className="mt-4 md:mt-12 grid grid-cols-1 md:grid-cols-10 gap-6 mb-6">

@@ -19,45 +19,45 @@ const AccountSection = () => {
     };
 
     return (
-        <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md shadow-md">
+        <div className="bg-gray-100 dark:bg-gray-800 p-4 rounded-md shadow-md flex justify-between items-center">
             <div className="flex items-center space-x-3">
-                {/* Notification Icon using React Icons */}
+                {/* Notification Icon */}
                 <FaBell className="text-gray-600 dark:text-gray-300" size={24} />
+            </div>
 
-                {/* Profile Section */}
-                <div className="flex items-center space-x-2">
-                    {/* Profile Picture using React Icons */}
-                    <div className="w-9 h-9 bg-gray-300 dark:bg-gray-600 flex items-center justify-center rounded-full">
-                        <FiUser className="text-white" size={20} />
-                    </div>
-                    <button
-                        onClick={handleDropdownToggle}
-                        className="text-gray-800 dark:text-gray-100 text-sm md:text-base font-semibold"
-                    >
-                        Username Here
-                    </button>
+            {/* Profile Section */}
+            <div className="flex items-center space-x-2">
+                {/* Profile Picture */}
+                <div className="w-9 h-9 bg-gray-300 dark:bg-gray-600 flex items-center justify-center rounded-full">
+                    <FiUser className="text-white" size={20} />
                 </div>
+                <button
+                    onClick={handleDropdownToggle}
+                    className="text-sm sm:text-base md:text-lg text-gray-800 dark:text-gray-100 font-semibold"
+                >
+                    Username Here
+                </button>
+            </div>
 
-                {/* Dropdown for edit/logout options */}
-                {isDropdownOpen && (
-                    <div className="absolute bg-white dark:bg-gray-700 rounded-md shadow-lg mt-2 right-0 w-40">
-                        <a href="dashboard/profile">
-                            <button
-                                className="block w-full text-left text-gray-800 dark:text-gray-100 px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600"
-                            >
-                                Profile
-                            </button>
-                        </a>
-                        <a href="/dashboard/logout">                        <button
+            {/* Dropdown Menu */}
+            {isDropdownOpen && (
+                <div className="absolute bg-white dark:bg-gray-700 rounded-md shadow-lg mt-2 right-0 w-40 z-10">
+                    <a href="dashboard/profile">
+                        <button
                             className="block w-full text-left text-gray-800 dark:text-gray-100 px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600"
                         >
-                            <a href="/dashboard/logout">Logout</a>
-
+                            Profile
                         </button>
-                        </a>
-                    </div>
-                )}
-            </div>
+                    </a>
+                    <a href="/dashboard/logout">
+                        <button
+                            className="block w-full text-left text-gray-800 dark:text-gray-100 px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-600"
+                        >
+                            Logout
+                        </button>
+                    </a>
+                </div>
+            )}
         </div>
     );
 };
