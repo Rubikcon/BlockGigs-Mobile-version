@@ -11,7 +11,7 @@ import Footer from './Footer';
 
 const Landingpage = () => {
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <Navbar />
       <Hero />
       <Heroblue />

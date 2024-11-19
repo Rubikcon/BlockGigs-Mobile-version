@@ -6,6 +6,7 @@ import { VitePWA } from "vite-plugin-pwa";
 export default defineConfig({
   plugins: [
     react(),
+
     VitePWA({
       registerType: "autoUpdate",
       manifest: {
@@ -32,4 +33,14 @@ export default defineConfig({
       },
     }),
   ],
+
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://blockgigs-mobile-version-backend.onrender.com",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
 });

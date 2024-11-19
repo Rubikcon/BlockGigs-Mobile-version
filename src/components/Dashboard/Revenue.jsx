@@ -40,7 +40,7 @@ const RevenueDisplay = () => {
         </select>
       </div>
 
-      <div className="text-3xl font-bold text-green-500 mb-4">
+      <div className="text-3xl sm:text-4xl font-bold text-green-500 mb-4">
         ${revenue.toFixed(2)}
       </div>
 
@@ -75,7 +75,7 @@ const RevenueDisplay = () => {
 
       <p className="text-gray-600 text-sm mb-6">Total revenue this {view}</p>
 
-      {/* Months List in Flexbox Layout */}
+      {/* Months List (If you decide to display months in the future) */}
       {/* <div className="flex flex-wrap justify-start gap-4 mb-6">
         {months.map((month) => (
           <div
