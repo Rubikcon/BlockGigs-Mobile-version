@@ -1,5 +1,7 @@
 // OngoingJobs.js
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+// import { useEffect, useState } from 'react';
 
 // Circular progress tracker component
 const CircularProgress = ({ progress }) => {
@@ -42,7 +44,59 @@ const CircularProgress = ({ progress }) => {
 };
 
 const OngoingJobs = () => {
-    const jobs = [
+    // {
+    //     "id": 2,
+    //     "title": "Marketplace for something",
+    //     "description": "A list of things",
+    //     "requiredSkills": "Must be a coder with Typescript",
+    //     "budget": 2000,
+    //     "deadline": 12345667,
+    //     "clientId": 1,
+    //     "assignedUserId": null,
+    //     "projectMilestones": []
+    // },
+
+    const [jobs, setJobs] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    // const API_URL = import.meta.env.VITE_API_URL;
+
+    // console.log(API_URL)
+
+    // Fetch jobs when the component mounts
+    useEffect(() => {
+        const fetchJobs = async () => {
+            try {
+                // Make GET request to fetch jobs
+                // const response = await axios.get(`${API_URL}/clients`);
+                const response = await axios.get("/api/projects"); // Proxy will forward to the actual API
+
+                setJobs(response.data); // Assuming the response contains a list of jobs
+                setLoading(false);
+            } catch (err) {
+                setError("Failed to fetch jobs");
+                setLoading(false);
+            }
+        };
+
+        fetchJobs();
+    }, []); // Empty dependency array to run once on component mount
+
+    // Render loading state, error, or jobs
+    if (loading) {
+        return <div>Loading...</div>;
+    }
+
+    if (error) {
+        return <div>{error}</div>;
+    }
+
+
+
+
+
+    const jobs_ = [
         { id: 1, title: "Web Development", owner: "Alice", time: "2h", progress: 50 },
         { id: 2, title: "Mobile App Design", owner: "Bob", time: "3h", progress: 75 },
     ];
@@ -61,7 +115,8 @@ const OngoingJobs = () => {
                     <div className="flex-1">
                         <p className="text-gray-800 font-semibold text-sm sm:text-base md:text-lg">{job.title}</p>
                         <div className="text-gray-500 text-xs sm:text-sm md:text-base">
-                            {job.owner} &bull; {job.time}
+                            {job.clientId} &bull; {job.time}
+                            <small>{job.requiredSkills}</small>
                         </div>
                     </div>
 
