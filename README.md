@@ -115,69 +115,64 @@ BlockGigs is powered by Web3 and blockchain technologies to ensure secure, decen
 - **Metamask Delegation Integration**: Facilitates secure wallet connections and decentralized authentication.
 - **Smart Contracts**: Automates transactions and contractual agreements for secure and transparent operations.
 - **Celo Blockchain Protocol**: The foundation for decentralized transactions, leveraging Celo’s scalability and eco-friendly design.
-- **Node.js**: Handles backend operations and database management for robust and efficient performance.
+- **Typescript and Next.js**: Handles backend operations and database management for robust and efficient performance.
 - **Decentralized Identity Solutions**: Ensuring secure identity management and authentication.
 - **IPFS**: Decentralized file storage for user data and job postings.
+- **PostgreSQL**: Manages and organizes all the data for activities on BlockGigs, ensuring efficient storage, retrieval, and seamless handling of user and platform information.
 
 ---
 
 ## Contributing
 
-We’re excited to have you contribute to BlockGigs and help us improve the platform! Follow these steps to get started:
+We’re excited to have you contribute to **BlockGigs** and help us improve the platform! Follow these steps to get started:
 
-1. **Fork the Repository**  
-   Start by forking the repository to create your own copy.
+### 1. Fork the Repository  
+Create your own copy of the repository by forking it.  
 
-2. **Create a New Branch**  
-   Create a new branch for your feature or bug fix. Name it descriptively, such as `feature/your-feature-name`.
+### 2. Create a New Branch  
+Create a branch for your feature or bug fix and name it descriptively:  
 
-   ```bash
-   git checkout -b feature/your-feature-name
+```bash  
+git checkout -b feature/your-feature-name  
+```  
 
-   ```
+### 3. Make Your Changes  
+Implement your changes and commit them with clear, concise commit messages:  
 
-3. **Make Your Changes**
-   Implement your changes and commit them with clear, concise commit messages.
+```bash  
+git commit -m "Add a detailed description of your changes"  
+```  
 
-   ```bash
-  git commit -m "Add a detailed description of your changes"
+### 4. Push Your Changes  
+Push your branch to your forked repository:  
 
-  ```
+```bash  
+git push origin feature/your-feature-name  
+```  
 
-4. **Push Your Changes**
-   Push your branch to your forked repository.
- 
- ```bash
-  git push origin feature/your-feature-name
-
-  ```
-
-5. **Open a Pull Request**
-  Once your branch is pushed, open a pull request to the main repository. Be sure to include a detailed description of what your changes do and why they’re important.
-
-We look forward to reviewing your contributions! Thank you for helping us improve BlockGigs.
+### 5. Open a Pull Request  
+After pushing your branch, open a pull request to the main repository. Include a detailed description of your changes and why they’re important.  
 
 ---
 
-## License
+## License  
 
-This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
-
----
-
-
-## Contact
-
-Have questions, feedback, or suggestions? Reach out to us:
-
-- **Email**: [info.rubiconconsulting@gmail.com](mailto:info.rubiconconsulting@gmail.com)
-- **LinkedIn**: [@Rubikcon](https://www.linkedin.com/company/rubicon-consults/)
-
-
+This project is licensed under the MIT License. For more details, check the [LICENSE](./LICENSE) file.  
 
 ---
 
-Join us in transforming the hiring landscape and shaping the future of decentralized work. Sign up today and take the next bold step toward advancing your career or growing your company with BlockGigs!
+## Contact  
 
+Have questions, feedback, or suggestions? Reach out to us:  
 
-````
+- **Email**: [info.rubiconconsulting@gmail.com](mailto:info.rubiconconsulting@gmail.com)  
+- **LinkedIn**: [@Rubikcon](https://www.linkedin.com/company/rubicon-consults/)  
+
+---
+
+## Join Us  
+
+Join us in transforming the hiring landscape and shaping the future of decentralized work. Sign up today and take a bold step toward advancing your career or growing your company with BlockGigs!  
+
+---  
+
