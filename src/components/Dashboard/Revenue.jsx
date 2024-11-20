@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const RevenueDisplay = () => {
-  const [view, setView] = useState('monthly'); // State to track the selected view
+  const [view, setView] = useState("monthly"); // State to track the selected view
 
-  const revenue = 1200.50;
+  const revenue = 0;
   const months = [
-    { name: 'Jan', jobsCompleted: 12, milestonesCovered: 8 },
-    { name: 'Feb', jobsCompleted: 10, milestonesCovered: 7 },
-    { name: 'Mar', jobsCompleted: 15, milestonesCovered: 10 },
-    { name: 'Apr', jobsCompleted: 8, milestonesCovered: 5 },
-    { name: 'May', jobsCompleted: 20, milestonesCovered: 14 },
-    { name: 'Jun', jobsCompleted: 18, milestonesCovered: 12 },
-    { name: 'Jul', jobsCompleted: 22, milestonesCovered: 16 },
-    { name: 'Aug', jobsCompleted: 14, milestonesCovered: 9 },
-    { name: 'Sep', jobsCompleted: 10, milestonesCovered: 6 },
-    { name: 'Oct', jobsCompleted: 17, milestonesCovered: 11 },
-    { name: 'Nov', jobsCompleted: 9, milestonesCovered: 7 },
-    { name: 'Dec', jobsCompleted: 11, milestonesCovered: 8 },
+    { name: "Jan", jobsCompleted: 12, milestonesCovered: 8 },
+    { name: "Feb", jobsCompleted: 10, milestonesCovered: 7 },
+    { name: "Mar", jobsCompleted: 15, milestonesCovered: 10 },
+    { name: "Apr", jobsCompleted: 8, milestonesCovered: 5 },
+    { name: "May", jobsCompleted: 20, milestonesCovered: 14 },
+    { name: "Jun", jobsCompleted: 18, milestonesCovered: 12 },
+    { name: "Jul", jobsCompleted: 22, milestonesCovered: 16 },
+    { name: "Aug", jobsCompleted: 14, milestonesCovered: 9 },
+    { name: "Sep", jobsCompleted: 10, milestonesCovered: 6 },
+    { name: "Oct", jobsCompleted: 17, milestonesCovered: 11 },
+    { name: "Nov", jobsCompleted: 9, milestonesCovered: 7 },
+    { name: "Dec", jobsCompleted: 11, milestonesCovered: 8 },
   ];
 
   const handleViewChange = (e) => {
@@ -26,7 +26,9 @@ const RevenueDisplay = () => {
   return (
     <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg">
       <div className="flex justify-between items-center mb-4">
-        <h3 className="text-gray-800 text-sm sm:text-md font-semibold">Revenue Overview</h3>
+        <h3 className="text-gray-800 text-sm sm:text-md font-semibold">
+          Revenue Overview
+        </h3>
 
         {/* Select for View Change */}
         <select
