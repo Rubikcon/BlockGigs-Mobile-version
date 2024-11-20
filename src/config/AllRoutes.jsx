@@ -4,14 +4,12 @@ import {
   Route,
   createRoutesFromElements,
   RouterProvider,
-  Navigate,
 } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import PageLoader from "../components/Loader/PageLoader";
 import DashboardLayout from "../layout/DashboardLayout";
 
 const Home = lazy(() => import("../components/LandingPage/Landingpage"));
-// const HomeLayout = lazy(() => import('../layout/HomeLayout'));
 const Profile = lazy(() => import("../pages/Profile"));
 const Settings = lazy(() => import("../pages/Settings"));
 const Wallet = lazy(() => import("../pages/Wallet"));
@@ -34,14 +32,8 @@ const router = createBrowserRouter(
       {/* Root route - home page without sidebar */}
       <Route path="/" element={<Home />} />
 
-      {/* <Route path="/" element={<HomeLayout />} > */}
-      {/* <Route index element={<Home />} /> */}
-      {/* <Route path='/join-waitlist-as-a-client' element={<Client />} /> */}
-      {/* <Route path='/join-waitlist-as-a-talent' element={<Talent />} /> */}
-      {/* </Route> */}
-
       {/* Dashboard routes under /dashboard path */}
-      <Route path="/dashboard" element={<DashboardLayout />}>
+      <Route path="dashboard" element={<DashboardLayout />}>
         <Route index element={<Dashboard />} />
         <Route path="my-gigs" element={<MyGigs />} />
         <Route path="wallet" element={<Wallet />} />
