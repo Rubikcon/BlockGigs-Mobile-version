@@ -142,10 +142,15 @@ We’re excited to have you contribute to BlockGigs and help us improve the plat
    ```bash
   git commit -m "Add a detailed description of your changes"
 
+  ```
+
 4. **Push Your Changes**
    Push your branch to your forked repository.
-    ```bash
-git push origin feature/your-feature-name
+ 
+ ```bash
+  git push origin feature/your-feature-name
+
+  ```
 
 5. **Open a Pull Request**
   Once your branch is pushed, open a pull request to the main repository. Be sure to include a detailed description of what your changes do and why they’re important.
