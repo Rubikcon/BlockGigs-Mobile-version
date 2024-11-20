@@ -139,16 +139,16 @@ We’re excited to have you contribute to BlockGigs and help us improve the plat
 3. **Make Your Changes**
    Implement your changes and commit them with clear, concise commit messages.
 
-````bash
-git commit -m "Add a detailed description of your changes"
+   ```bash
+  git commit -m "Add a detailed description of your changes"
 
 4. **Push Your Changes**
-Push your branch to your forked repository.
-```bash
+   Push your branch to your forked repository.
+    ```bash
 git push origin feature/your-feature-name
 
 5. **Open a Pull Request**
-Once your branch is pushed, open a pull request to the main repository. Be sure to include a detailed description of what your changes do and why they’re important.
+  Once your branch is pushed, open a pull request to the main repository. Be sure to include a detailed description of what your changes do and why they’re important.
 
 We look forward to reviewing your contributions! Thank you for helping us improve BlockGigs.
 
@@ -167,7 +167,7 @@ Have questions, feedback, or suggestions? Reach out to us:
 
 - **Email**: [info.rubiconconsulting@gmail.com](mailto:info.rubiconconsulting@gmail.com)
 - **LinkedIn**: [@Rubikcon](https://www.linkedin.com/company/rubicon-consults/)
-- **Website**: [www.blockgigs.xyz](https://www.blockgigs.xyz)
+
 
 
 ---
