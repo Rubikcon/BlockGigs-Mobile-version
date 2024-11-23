@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.custom-font-features {
+  font-feature-settings: 'cv01' on, 'cv03' on, 'cv04' on;
+}
