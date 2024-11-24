@@ -11,12 +11,15 @@ node_modules
 dist
 dist-ssr
 *.local
+<<<<<<< HEAD
 .env
 
 
 # Secrets 
 .env
 
+=======
+>>>>>>> web-app-forms
 
 # Editor directories and files
 .vscode/*

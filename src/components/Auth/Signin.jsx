@@ -6,7 +6,7 @@ import metamask from "../../assets/metamask.png";
 import wallet from "../../assets/wallet.png";
 import { Link } from "react-router-dom";
 
-const Signup = () => {
+const Signin = () => {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
 
@@ -45,10 +45,13 @@ const Signup = () => {
       >
         <div className="text-center">
           <h2 className="text-[#292929] text-xl md:text-2xl font-medium">
-            Sign Up
+            Sign In
           </h2>
-          <p className="text-[#676767] text-sm md:text-base text-nowrap">
-            Create an account with us by email or wallet
+          <p className="text-[#292929] tracking-[0.07px] text-sm md:text-base">
+            Welcome Back to{" "}
+            <span className="text-[#676767] tracking-[0.07px] text-sm md:text-base">
+              Blockgigs!!
+            </span>{" "}
           </p>
         </div>
 
@@ -81,12 +84,15 @@ const Signup = () => {
         </div>
 
         <div className="w-full space-y-4 mt-6">
-          <button className="flex items-center gap-4 w-full px-4 py-3 border rounded-lg bg-[#FAFAFA]">
+          <Link
+            to="/wallet"
+            className="flex items-center gap-4 w-full px-4 py-3 border rounded-lg bg-[#FAFAFA]"
+          >
             <img className="w-6 h-6" src={metamask} alt="metamask" />
             <span className="text-sm md:text-base font-medium text-[#242d44]">
               Metamask
             </span>
-          </button>
+          </Link>
 
           <button className="flex items-center gap-4 w-full px-4 py-3 border rounded-lg bg-[#FAFAFA]">
             <img className="w-6 h-6" src={celo} alt="celo" />
@@ -105,10 +111,10 @@ const Signup = () => {
 
         <div className="flex justify-center items-center mt-6 space-x-2">
           <p className="text-sm md:text-base text-[#292929]">
-            Already have an account?
+            Don’t have an account?
           </p>
-          <Link className="text-sm md:text-base text-[#177f9f]" to="/Signin">
-            Sign in
+          <Link className="text-sm md:text-base text-[#177f9f]" to="/signup">
+            Sign up
           </Link>
         </div>
       </form>
@@ -116,4 +122,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Signin;

@@ -87,3 +87,6 @@ body {
   font-weight: 500;
   line-height: 24px; /* 120% */
 }
+.custom-font-features {
+  font-feature-settings: 'cv01' on, 'cv03' on, 'cv04' on;
+}

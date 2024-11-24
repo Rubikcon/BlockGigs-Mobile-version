@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { CiMenuFries } from "react-icons/ci";
 import { LiaTimesSolid } from "react-icons/lia";
 import { connectWallet } from "../../utils/WalletUtils";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./style.css";
 
 const Navbar = () => {
