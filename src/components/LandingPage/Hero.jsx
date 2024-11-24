@@ -21,9 +21,13 @@ const Hero = () => {
     }
   };
 
-  const navigate = useNavigate("");
+  const navigate = useNavigate();
 
   const handleSignupTalent = () => {
+    navigate("/signup");
+  };
+
+  const handleSignupHiringManager = () => {
     navigate("/signup");
   };
 
@@ -84,7 +88,7 @@ const Hero = () => {
             Sign up as Talent
           </button>
           <button
-            onClick={handleConnectWallet}
+            onClick={handleSignupHiringManager}
             className="flex px-6 py-3 justify-center items-center gap-2 rounded border border-[#D7D9E4] bg-[#696F8C] font-montserrat text-base text-white not-italic font-medium leading-6"
           >
             Hire Talent

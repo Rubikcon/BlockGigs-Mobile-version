@@ -4,7 +4,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import celo from "../../assets/celo.png";
 import metamask from "../../assets/metamask.png";
 import wallet from "../../assets/wallet.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -20,12 +20,15 @@ const Signup = () => {
     if (error) setError("");
   };
 
+  const navigate = useNavigate();
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (!validateEmail(email)) {
       setError("Please enter a valid email address.");
       return;
     }
+    navigate("/register");
     console.log("Form submitted:", { email });
   };
 

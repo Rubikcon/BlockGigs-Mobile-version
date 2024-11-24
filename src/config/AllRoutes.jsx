@@ -19,10 +19,13 @@ const Dashboard = lazy(() => import("../pages/Dashboard"));
 const MyGigs = lazy(() => import("../pages/MyGigs"));
 const Discover = lazy(() => import("../pages/Discover"));
 const Logout = lazy(() => import("../pages/Logout"));
-const Signup = lazy(() => import("../utils/WalletUtils"));
+// const Signup = lazy(() => import("../utils/WalletUtils"));
 const MetaMaskConnector = lazy(() =>
   import("../components/MetaMask/MetaMaskConnector")
 );
+
+const Signup = lazy(() => import("../components/Auth/Signup"));
+
 const NotFound = lazy(() => import("../pages/404"));
 
 // Define router with separate layouts

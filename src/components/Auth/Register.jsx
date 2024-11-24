@@ -9,11 +9,18 @@ const Register = () => {
   const [selectedOption, setSelectedOption] = useState(null); // Track selected option
   const navigate = useNavigate(); // For navigation
 
+  const handleClientPage = () => {
+    navigate("/clientpage");
+  };
+
+  const handleTalentPage = () => {
+    navigate("/talentpage");
+  };
   const handleNext = () => {
     if (selectedOption === "client") {
-      navigate("/Clientpage"); // Navigate to client page
+      navigate("/clientpage"); // Navigate to client page
     } else if (selectedOption === "talent") {
-      navigate("/Talentpage"); // Navigate to talent page
+      navigate("/talentpage"); // Navigate to talent page
     } else {
       alert("Please select an option before proceeding."); // Error handling
     }
@@ -48,7 +55,7 @@ const Register = () => {
             className={`flex items-start gap-4 p-3 pl-4 self-stretch rounded-lg border border-gray-300 hover:bg-[rgba(190,212,223,1)] cursor-pointer ${
               selectedOption === "client" ? "bg-[rgba(190,212,223,1)]" : ""
             }`}
-            onClick={() => setSelectedOption("client")} // Set as selected
+            onClick={handleClientPage} // Set as selected
           >
             <img className="w-[16px] h-[16px]" src={ic} alt="ic" />
             <div className="flex flex-col items-start space-y-1">
@@ -67,7 +74,7 @@ const Register = () => {
             className={`flex items-start gap-4 p-3 pl-4 self-stretch rounded-lg border border-gray-300 hover:bg-[rgba(190,212,223,1)] cursor-pointer ${
               selectedOption === "talent" ? "bg-[rgba(190,212,223,1)]" : ""
             }`}
-            onClick={() => setSelectedOption("talent")} // Set as selected
+            onClick={handleTalentPage} // Set as selected
           >
             <img className="w-[16px] h-[16px]" src={user} alt="user" />
             <div className="flex flex-col items-start space-y-1">
