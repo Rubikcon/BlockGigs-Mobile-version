@@ -1,26 +1,17 @@
 import React, { useState } from "react";
-import logo from "../../assets/logo.png";
 import { FaArrowRightLong } from "react-icons/fa6";
-import celo from "../../assets/celo.png";
-import metamask from "../../assets/metamask.png";
-import wallet from "../../assets/wallet.png";
 import { Link, useNavigate } from "react-router-dom";
+import logo from "../../assets/logo.png";
+import metamask from "../../assets/metamask.png";
+import celo from "../../assets/celo.png";
+import wallet from "../../assets/wallet.png";
 
-const Signup = () => {
-  const [email, setEmail] = useState("");
+const Signup = ({ formData, onUpdate }) => {
+  const [email, setEmail] = useState(formData.email || "");
   const [error, setError] = useState("");
-
-  const validateEmail = (email) => {
-    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(email);
-  };
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-    if (error) setError("");
-  };
-
   const navigate = useNavigate();
+
+  const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
@@ -28,8 +19,13 @@ const Signup = () => {
       setError("Please enter a valid email address.");
       return;
     }
+    onUpdate({ email });
     navigate("/register");
-    console.log("Form submitted:", { email });
+  };
+
+  const handleNext = () => {
+    onUpdate({ email });
+    navigate("register");
   };
 
   return (
@@ -64,12 +60,15 @@ const Signup = () => {
               className="flex-1 text-gray-600 placeholder-gray-400 outline-none text-sm md:text-base"
               type="text"
               value={email}
-              onChange={handleEmailChange}
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
               placeholder="Continue with email"
             />
             <button
               type="submit"
               className="h-8 w-8 flex justify-center items-center bg-[#177F9F] rounded-md"
+              onClick={handleNext}
             >
               <FaArrowRightLong className="text-white" />
             </button>

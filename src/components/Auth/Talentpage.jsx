@@ -1,7 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
-const Talentpage = () => {
+const TalentPage = ({ formData, onUpdate, onSubmit }) => {
+  const [fullname, setFullname] = useState(formData.fullname || "");
+  const [profession, setProfession] = useState(formData.profession || "");
+  const [workname, setWorkname] = useState(formData.workname || "");
+  const navigate = useNavigate();
+
+  const handleFinish = () => {
+    onUpdate({ fullname, profession, workname });
+    onSubmit();
+    navigate("/dashboard");
+  };
+
+  const handleSkipProfile = () => {
+    navigate("/dashboard");
+  };
   return (
     <div className="w-full h-full bg-[#0a0f29] flex flex-col items-center">
       {/* Logo and Title */}
@@ -33,6 +48,8 @@ const Talentpage = () => {
             </h4>
             <input
               type="text"
+              value={fullname}
+              onChange={(e) => setFullname(e.target.value)}
               placeholder="Anita Razer"
               className="w-full p-3 rounded-lg border border-[#DBDBDB] text-[#a9a9a9] font-onest text-base"
             />
@@ -44,6 +61,8 @@ const Talentpage = () => {
             </h4>
             <input
               type="text"
+              value={workname}
+              onChange={(e) => setWorkname(e.target.value)}
               placeholder="Designhandz"
               className="w-full p-3 rounded-lg border border-[#DBDBDB] text-[#a9a9a9] font-onest text-base"
             />
@@ -57,6 +76,8 @@ const Talentpage = () => {
           </h4>
           <input
             type="text"
+            value={profession}
+            onChange={(e) => setProfession(e.target.value)}
             placeholder="Product Designer"
             className="w-full p-3 rounded-lg border border-[#DBDBDB] text-[#a9a9a9] font-onest text-base"
           />
@@ -74,12 +95,18 @@ const Talentpage = () => {
         </div>
 
         {/* Profile Done Button */}
-        <button className="w-full p-[12px_32px] justify-center items-center gap-3 rounded-lg bg-[#177F9F] text-white font-onest text-sm md:text-base font-medium leading-6">
+        <button
+          className="w-full p-[12px_32px] justify-center items-center gap-3 rounded-lg bg-[#177F9F] text-white font-onest text-sm md:text-base font-medium leading-6"
+          onClick={handleFinish}
+        >
           Profile Done!
         </button>
 
         {/* Skip Profile Button */}
-        <button className="text-[#177f9f] font-onest text-sm md:text-base font-normal leading-6">
+        <button
+          className="text-[#177f9f] font-onest text-sm md:text-base font-normal leading-6"
+          onClick={handleSkipProfile}
+        >
           Skip Profile, I will fill later
         </button>
       </div>
@@ -87,4 +114,4 @@ const Talentpage = () => {
   );
 };
 
-export default Talentpage;
+export default TalentPage;

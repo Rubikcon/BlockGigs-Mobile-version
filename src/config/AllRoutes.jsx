@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { useState, Suspense, lazy } from "react";
 import {
   createBrowserRouter,
   Route,
@@ -9,6 +9,7 @@ import { Toaster } from "react-hot-toast";
 import PageLoader from "../components/Loader/PageLoader";
 import DashboardLayout from "../layout/DashboardLayout";
 
+// Lazy-loaded components
 const Home = lazy(() => import("../components/LandingPage/Landingpage"));
 const Profile = lazy(() => import("../pages/Profile"));
 const Settings = lazy(() => import("../pages/Settings"));
@@ -19,54 +20,89 @@ const Dashboard = lazy(() => import("../pages/Dashboard"));
 const MyGigs = lazy(() => import("../pages/MyGigs"));
 const Discover = lazy(() => import("../pages/Discover"));
 const Logout = lazy(() => import("../pages/Logout"));
-// const Signup = lazy(() => import("../utils/WalletUtils"));
-const MetaMaskConnector = lazy(() =>
-  import("../components/MetaMask/MetaMaskConnector")
-);
-
 const Signup = lazy(() => import("../components/Auth/Signup"));
-
+const Register = lazy(() => import("../components/Auth/Register"));
+const TalentPage = lazy(() => import("../components/Auth/Talentpage"));
+const ClientPage = lazy(() => import("../components/Auth/Clientpage"));
 const NotFound = lazy(() => import("../pages/404"));
 
-// Define router with separate layouts
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route>
-      {/* Root route - home page without sidebar */}
-      <Route path="/" element={<Home />} />
+const AllRoutes = () => {
+  // Centralized form data state
+  const [formData, setFormData] = useState({
+    email: "",
+    fullname: "",
+    profession: "",
+    workname: "",
+  });
 
-      {/* Dashboard routes under /dashboard path */}
-      <Route path="dashboard" element={<DashboardLayout />}>
-        <Route index element={<Dashboard />} />
-        <Route path="my-gigs" element={<MyGigs />} />
-        <Route path="wallet" element={<Wallet />} />
-        <Route path="discover" element={<Discover />} />
-        <Route path="messages" element={<Messages />} />
-        <Route path="offers" element={<Offers />} />
-        <Route path="profile" element={<Profile />} />
-        <Route path="settings" element={<Settings />} />
-        <Route path="connect-metamask" element={<MetaMaskConnector />} />
+  // Update and Submit Handlers
+  const handleUpdate = (newData) => {
+    setFormData((prev) => ({ ...prev, ...newData }));
+  };
+
+  const handleSubmit = () => {
+    console.log("Final Form Data", formData);
+    alert("Form Submitted");
+  };
+
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route>
+        {/* Public Routes */}
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/signup"
+          element={<Signup formData={formData} onUpdate={handleUpdate} />}
+        />
+        <Route path="/register" element={<Register />} />
+        <Route
+          path="/talentpage"
+          element={
+            <TalentPage
+              formData={formData}
+              onUpdate={handleUpdate}
+              onSubmit={handleSubmit}
+            />
+          }
+        />
+        <Route
+          path="/clientpage"
+          element={
+            <TalentPage
+              formData={formData}
+              onUpdate={handleUpdate}
+              onSubmit={handleSubmit}
+            />
+          }
+        />
+
+        {/* Dashboard Routes */}
+        <Route path="dashboard" element={<DashboardLayout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="my-gigs" element={<MyGigs />} />
+          <Route path="wallet" element={<Wallet />} />
+          <Route path="discover" element={<Discover />} />
+          <Route path="messages" element={<Messages />} />
+          <Route path="offers" element={<Offers />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+        <Route path="/dashboard/logout" element={<Logout />} />
+
+        {/* Catch-All */}
+        <Route path="*" element={<NotFound />} />
       </Route>
+    )
+  );
 
-      {/* Logout Route */}
-      <Route path="/dashboard/logout" element={<Logout />} />
-
-      {/* Signup with metamask */}
-      <Route path="/signup" element={<Signup />} />
-      {/* 404 Not Found Route */}
-      <Route path="*" element={<NotFound />} />
-    </Route>
-  )
-);
-
-const AllRoutes = () => (
-  <div>
-    {/* <div className="w-full mx-auto bg-white min-h-[100vh] font-opensans max-w-[1440px] text-[#0F160F]"> */}
-    <Toaster />
-    <Suspense fallback={<PageLoader />}>
-      <RouterProvider router={router} />
-    </Suspense>
-  </div>
-);
+  return (
+    <div>
+      <Toaster />
+      <Suspense fallback={<PageLoader />}>
+        <RouterProvider router={router} />
+      </Suspense>
+    </div>
+  );
+};
 
 export default AllRoutes;
