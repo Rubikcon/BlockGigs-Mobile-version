@@ -31,7 +31,7 @@ We’re not just building a platform; we’re building the future of work in Web
 7. [Contributing](#contributing)
 8. [License](#license)
 9. [Contact](#contact)
-10. [Backend and Blockchain](#Backend and Blockchain).
+10. [Other Parts](#other-parts)
     
 
 ---
@@ -172,6 +172,10 @@ Have questions, feedback, or suggestions? Reach out to us:
 - **LinkedIn**: [@Rubikcon](https://www.linkedin.com/company/rubicon-consults/)  
 
 ---
+
+## Other Areas
+- **Backend**: [Backend Repo](https://github.com/Rubikcon/BlockGigs-Mobile-Version-Backend)
+- **Blockchain**: [Blockchain](https://github.com/ESE-MONDAY/rubikon)
 
 ## Join Us  
 
