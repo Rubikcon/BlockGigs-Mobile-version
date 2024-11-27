@@ -175,7 +175,7 @@ Have questions, feedback, or suggestions? Reach out to us:
 
 ## Other Areas
 - **Backend**: [Backend Repo](https://github.com/Rubikcon/BlockGigs-Mobile-Version-Backend)
-- **Blockchain**: [Blockchain](https://github.com/ESE-MONDAY/rubikon)
+- **Blockchain**: [Blockchain Repo](https://github.com/ESE-MONDAY/rubikon)
 
 ## Join Us  
 
