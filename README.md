@@ -31,6 +31,8 @@ We’re not just building a platform; we’re building the future of work in Web
 7. [Contributing](#contributing)
 8. [License](#license)
 9. [Contact](#contact)
+10. [Other Parts](#other-parts)
+    
 
 ---
 
@@ -71,7 +73,7 @@ Designed to meet the unique demands of the blockchain space, BlockGigs prioritiz
 
 ### For Professionals
 
-1. **Sign Up**: Visit [www.blockgigs.xyz] to create an account.
+1. **Sign Up**: Visit the page to create an account.
 2. **Complete Profile**: Add your skills, experience, and portfolio to build a comprehensive anonymous profile.
 3. **Browse Jobs**: Use the job board to search for roles that match your skill set and interests.
 4. **Apply and Connect**: Apply for jobs, chat with employers, and receive offers.
@@ -79,7 +81,7 @@ Designed to meet the unique demands of the blockchain space, BlockGigs prioritiz
 
 ### For Companies
 
-1. **Register Your Company**: Visit [www.blockgigs.xyz] and create an account for your company.
+1. **Register Your Company**: Visit the page create an account for your company.
 2. **Post a Job**: Provide details about the role, skills required, and project specifications.
 3. **Review Candidates**: View anonymous profiles of applicants and shortlist those who meet your needs.
 4. **Interview and Hire**: Connect directly, conduct interviews, and onboard selected candidates.
@@ -171,11 +173,14 @@ Have questions, feedback, or suggestions? Reach out to us:
 
 ---
 
+## Other Areas
+- **Backend**: [Backend Repo](https://github.com/Rubikcon/BlockGigs-Mobile-Version-Backend)
+- **Blockchain**: [Blockchain Repo](https://github.com/ESE-MONDAY/rubikon)
+
 ## Join Us  
 
 Join us in transforming the hiring landscape and shaping the future of decentralized work. Sign up today and take a bold step toward advancing your career or growing your company with BlockGigs!  
 
 ---  
 
-=======
->>>>>>> web-app-forms
+
