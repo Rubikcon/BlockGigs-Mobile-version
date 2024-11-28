@@ -5,10 +5,13 @@ import logo from "../../assets/logo.png";
 import metamask from "../../assets/metamask.png";
 import celo from "../../assets/celo.png";
 import wallet from "../../assets/wallet.png";
+import { connectWallet } from "../../utils/WalletUtils";
 
 const Signup = ({ formData, onUpdate }) => {
   const [email, setEmail] = useState(formData.email || "");
   const [error, setError] = useState("");
+  const [account, setAccount] = useState(null);
+
   const navigate = useNavigate();
 
   const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
@@ -20,12 +23,26 @@ const Signup = ({ formData, onUpdate }) => {
       return;
     }
     onUpdate({ email });
-    navigate("/register");
   };
 
   const handleNext = () => {
     onUpdate({ email });
-    navigate("register");
+    navigate("/register");
+  };
+
+  const handleConnectWallet = async () => {
+    try {
+      const userAccount = await connectWallet();
+      setAccount(userAccount);
+      console.log("Connected Account ", userAccount);
+    } catch (err) {
+      console.error("Error connecting wallet", err.message);
+    }
+  };
+
+  const handleDisconnectWallet = () => {
+    setAccount(null);
+    console.log("Disconnect Wallet successfully");
   };
 
   return (
@@ -60,20 +77,20 @@ const Signup = ({ formData, onUpdate }) => {
               className="flex-1 text-gray-600 placeholder-gray-400 outline-none text-sm md:text-base"
               type="text"
               value={email}
+              required
               onChange={(e) => {
                 setEmail(e.target.value);
               }}
               placeholder="Continue with email"
             />
             <button
-              type="submit"
               className="h-8 w-8 flex justify-center items-center bg-[#177F9F] rounded-md"
               onClick={handleNext}
             >
               <FaArrowRightLong className="text-white" />
             </button>
           </div>
-          {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
+          {error || <p className="text-red-500 text-sm mt-2">{error}</p>}
         </div>
 
         <div className="flex items-center w-full mt-6">
@@ -83,12 +100,29 @@ const Signup = ({ formData, onUpdate }) => {
         </div>
 
         <div className="w-full space-y-4 mt-6">
-          <button className="flex items-center gap-4 w-full px-4 py-3 border rounded-lg bg-[#FAFAFA]">
-            <img className="w-6 h-6" src={metamask} alt="metamask" />
-            <span className="text-sm md:text-base font-medium text-[#242d44]">
-              Metamask
-            </span>
-          </button>
+          {!account ? (
+            <button
+              className="flex items-center gap-4 w-full px-4 py-3 border rounded-lg bg-[#FAFAFA]"
+              onClick={handleConnectWallet}
+            >
+              <img className="w-6 h-6" src={metamask} alt="metamask" />
+              <span className="text-sm md:text-base font-medium text-[#242d44]">
+                Metamask
+              </span>
+            </button>
+          ) : (
+            <div className="wallet-info">
+              <span className="wallet-address">
+                Connected: {account.slice(0, 6) + "..." + account.slice(-4)}
+              </span>
+              <button
+                onClick={handleDisconnectWallet}
+                className="disconnect-button"
+              >
+                Disconnect
+              </button>
+            </div>
+          )}
 
           <button className="flex items-center gap-4 w-full px-4 py-3 border rounded-lg bg-[#FAFAFA]">
             <img className="w-6 h-6" src={celo} alt="celo" />
@@ -109,7 +143,7 @@ const Signup = ({ formData, onUpdate }) => {
           <p className="text-sm md:text-base text-[#292929]">
             Already have an account?
           </p>
-          <Link className="text-sm md:text-base text-[#177f9f]" to="/Signin">
+          <Link className="text-sm md:text-base text-[#177f9f]" to="/signin">
             Sign in
           </Link>
         </div>

@@ -4,7 +4,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import celo from "../../assets/celo.png";
 import metamask from "../../assets/metamask.png";
 import wallet from "../../assets/wallet.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signin = () => {
   const [email, setEmail] = useState("");

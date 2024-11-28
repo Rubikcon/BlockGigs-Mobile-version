@@ -4,11 +4,12 @@ import {
   Route,
   createRoutesFromElements,
   RouterProvider,
+  useNavigate,
 } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import PageLoader from "../components/Loader/PageLoader";
 import DashboardLayout from "../layout/DashboardLayout";
-
+import { handleWalletOnSignup } from "../utils/WalletUtils";
 // Lazy-loaded components
 const Home = lazy(() => import("../components/LandingPage/Landingpage"));
 const Profile = lazy(() => import("../pages/Profile"));
@@ -21,6 +22,7 @@ const MyGigs = lazy(() => import("../pages/MyGigs"));
 const Discover = lazy(() => import("../pages/Discover"));
 const Logout = lazy(() => import("../pages/Logout"));
 const Signup = lazy(() => import("../components/Auth/Signup"));
+const Signin = lazy(() => import("../components/Auth/Signin"));
 const Register = lazy(() => import("../components/Auth/Register"));
 const TalentPage = lazy(() => import("../components/Auth/Talentpage"));
 const ClientPage = lazy(() => import("../components/Auth/Clientpage"));
@@ -45,11 +47,22 @@ const AllRoutes = () => {
     alert("Form Submitted");
   };
 
+  const WalletRoute = () => {
+    const navigate = useNavigate();
+
+    React.useEffect(() => {
+      handleWalletOnSignup(navigate);
+    }, [navigate]);
+
+    return <div> Connecting your wallet, please wait ...</div>;
+  };
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route>
         {/* Public Routes */}
+        <Route path="/connect-wallet" element={<WalletRoute />} />
         <Route path="/" element={<Home />} />
+        <Route path="/signin" element={<Signin />} />
         <Route
           path="/signup"
           element={<Signup formData={formData} onUpdate={handleUpdate} />}
